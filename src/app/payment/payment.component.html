@@ -1,0 +1,55 @@
+<app-header></app-header>
+<section class="font-poppins flex flex-colum justify-center align-center text-black" style="margin-top: 50px"
+    id="paymentgateway">
+
+
+    <div class="card" style="width: 18rem; border-radius: 12px;" b>
+        <img [src]="carImg" id="card-img" class="card-img-top" alt="image"
+            style=" border-top-left-radius: 10px; border-top-right-radius: 10px;">
+        <div class="card-body">
+            <h5 class="card-title clr-theme fw-bolder" id="name">{{carName}}</h5>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" id="price">{{carPrice}}</li>
+                <li class="list-group-item" id="options">{{carTransmission}}</li>
+            </ul>
+        </div>
+    </div>
+
+    <p class="display-10 mt-3">Select PickUp date: <input type="date" name="date" id="pdate" [(ngModel)]="Pdate" (onchange)="change()"></p>
+    <p class="display-10 mt-3">Select Return date: <input type="date" name="date" id="rdate" [(ngModel)]="Rdate" (change)="change()"></p>
+    <h6>Renting For: <span id="totaldays">1d</span></h6>
+    <h6>Select a Payment Method:</h6>
+
+    <div class="flex flex-wrap">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Googlepay"
+                [(ngModel)]="selectedOption">
+            <label class="form-check-label" for="inlineRadio1">Googlepay (Recommanded)</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Paytm"
+                [(ngModel)]="selectedOption">
+            <label class="form-check-label" for="inlineRadio2">Paytm</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                value="Crypto Currency" [(ngModel)]="selectedOption">
+            <label class="form-check-label" for="inlineRadio3">Crypto Currency</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="Upi"
+                [(ngModel)]="selectedOption">
+            <label class="form-check-label" for="inlineRadio4">Upi</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5"
+                value="Cash on Pickup" [(ngModel)]="selectedOption">
+            <label class="form-check-label" for="inlineRadio5">Cash on PickUp</label>
+        </div>
+    </div>
+    <p class="display-10 mt-3">Total payment: <span class="badge bg-success" id="payment">{{Tprice}}</span></p>
+    <button class="btn btn-danger" id="pay" type="button" (click)="payment()">
+        Pay Now
+    </button>
+</section>

@@ -1,0 +1,30 @@
+<app-header></app-header>
+<div class="flex flex-wrap text-black">
+    <div class="card" style="width: 18rem;" *ngFor="let card of cards">
+        <img [src]="card.imageSrc" class="card-img-top" alt="unable to load images!">
+        <div class="card-body">
+            <span class="badge rounded-pill bg-dark">{{ card.badge }}</span>
+            <h4 class="card-title" [id]="card.id">{{ card.title }}</h4>
+            <p class="card-text">Engine: {{ card.engine }} <br>
+                Fuel: {{ card.fuel }} <br>
+                Fuel capacity: {{ card.fuelCapacity }} <br>
+                Seats: {{ card.seats }}
+            </p>
+            <div class="grid grid-two-column">
+                <h4 style="font-weight: 400; font-size: 1rem">Price:</h4>
+                <span class="badge rounded-pill bg-danger">{{ card.price }}</span>
+            </div>
+            <div class="grid grid-two-column mt-2">
+                <h6>transmission:</h6>
+                <select style="margin-left: -80px;" name="transmission" [id]="card.transmissionId">
+                    <option value="Manual">Manual</option>
+                    <option value="Automatic">Automatic</option>
+                </select>
+            </div>
+        </div>
+        <div class="card-footer" style="background:transparent; border-color: transparent;">
+            <button class="btn-red" (click)="rentCar(card.transmissionId, card.price, card.title, card.imageSrc)">Rent Now</button>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,26 @@
+<app-header></app-header>
+<div class="register font-sans clr-bg">
+    <div class="background">
+        <div class="content">
+            <header>Login</header>
+            <p>Login to your account</p>
+            <form id="register">
+                <div class="alert alert-danger" role="alert" *ngIf="msg != ''">
+                    {{msg}}
+                </div>
+                <div class="field">
+                    <input type="email" name="email" id="field1" required placeholder="Enter Your Email Id"
+                        [(ngModel)]="email">
+                </div>
+                <div class="field space">
+                    <input [type]="type" name="password" id="field2" required placeholder="Enter your password"
+                        class="pass-key" [(ngModel)]="password">
+                    <span class="show-btn" (click)="PassCheck()">SHOW</span>
+                </div>
+                <div class="field">
+                    <a (click)="Login()"> Register</a>
+                </div>
+            </form>
+        </div>
+
+    </div>

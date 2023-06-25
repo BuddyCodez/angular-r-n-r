@@ -1,0 +1,29 @@
+<div class="rent bg-white">
+    <h1 style="font-size: 2.5rem;">{{name}}</h1>
+    <div class="flex flex-wrap justify-center">
+        <div class="card-wrap" *ngFor="let item of cards">
+            <div class="card bg-dark text-white" style="border-radius: 14px; border: 2px solid black;">
+                <div class="img-wrap">
+                    <img id="syden" [src]="item.imageSrc" class="card-img" alt="image">
+                </div>
+                <div class="card-overlay">
+                    <h5 class="card-title">{{item.title}}</h5>
+                    <div class="card-text">
+                        <div class="size">
+                            <h3>Segment Options:</h3>
+                            <li *ngFor="let i of item.segmentOptions">{{ i }}</li>
+                        </div>
+                        <div class="size">
+                            <h3>Transmission:</h3>
+                            <li *ngFor="let i of item.transmissionOptions">{{ i }}</li>
+                        </div>
+                        <br>
+                        <a [href]="'showcase/' + item.title.toLowerCase()">Show More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

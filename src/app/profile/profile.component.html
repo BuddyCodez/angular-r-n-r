@@ -1,0 +1,35 @@
+<app-header></app-header>
+<ng-container *ngIf="rentcars.length === 0; else rentingHistory">
+    <div class="flex">
+        <h4 class="display-4 fw-bold font-poppins text-black" align="center">No Renting History Found</h4>
+    </div>
+</ng-container>
+
+<ng-template #rentingHistory>
+    <h4 class="display-4 fw-bold font-poppins text-black" align="center">Your Renting History</h4>
+    <!-- Additional content for renting history -->
+</ng-template>
+
+<div class="flex flex-warp justify-center align-items-center text-black">
+    <div class="card" style="width: 18rem; border-radius: 12px;" *ngFor="let car of rentcars">
+        <img [src]="car.thumbnail" id="card-img" class="card-img-top" alt="image"
+            style=" border-top-left-radius: 10px; border-top-right-radius: 10px;">
+        <div class="card-body">
+            <h5 class="card-title clr-theme fw-bolder" id="name">{{car.name}}</h5>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" id="price"><span class="fw-bold font-poppins">Price/day:</span>
+                    {{car.price}}</li>
+                <li class="list-group-item" id="options"><span class="fw-bold font-poppins">Transmission:</span>
+                    {{car.transmission}}</li>
+                <li class="list-group-item" id="options"><span class="fw-bold font-poppins">Total Price:</span>
+                    {{car.totalprice}}</li>
+                <li class="list-group-item" id="options"><span class="fw-bold font-poppins">Pickup Date:</span> {{
+                    datePipe.transform(car.pickupdate, 'shortDate') }}</li>
+                <li class="list-group-item" id="options"><span class="fw-bold font-poppins">Return Date:</span> {{
+                    datePipe.transform(car.returndate, 'shortDate') }}</li>
+
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,103 @@
+
+nav {
+  transition: all ease-in-out 0.5s;
+   font-family: "Josefin Sans", sans-serif;
+}
+.nav-head {
+  margin: 0 12px;
+}
+.navbar-toggler {
+  border-color: transparent;
+}
+
+.navbar-dark {
+  background-color: var(--dark);
+}
+
+.active {
+  color: var(--theme);
+}
+
+.nav-head {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+/*Color of the login button */
+li {
+ 
+  padding-top: 10px;
+}
+
+.nav-link {
+  width: 100px;
+  color: var(--dark);
+  padding-right: 10px;
+  text-align: center;
+  border-radius: 2px;
+}
+
+.nav-link:hover {
+  color: var(--bg);
+  border-bottom: 2px solid var(--theme);
+  transition: 0.2s all;
+}
+
+.nav-item {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 992px) {
+  #nav-holder {
+    justify-content: right;
+  }
+  .nav-head {
+    display: block;
+  }
+
+  .nav-link {
+    background-color: transparent;
+    padding-right: none;
+    text-align: center;
+    border-radius: none;
+  }
+}
+
+.dropdown-item:active {
+  background-color: var(--theme);
+  color: var(--bg);
+}
+
+.dropdown-item {
+  color: var(--theme);
+}
+
+.cover {
+  filter: blur(50%);
+  background-image: url("/assets/cover.jpg");
+  width: 100vw;
+  height: 35vh;
+  background-repeat: no-repeat;
+  background-position-y: center;
+}
+
+button.toggler {
+  color: white;
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  transition: box-shadow 0.15s ease-in-out;
+}
+
+@media (max-width: 992px) {
+  .card {
+    margin-top: 1rem;
+  }
+}
+.card-img-top{
+  height: 200px;
+}
